@@ -1,0 +1,51 @@
+.container
+	.row
+		.col-md-6
+			h1 Hello
+	.row
+		.col-md-6
+			button.btn.btn-info.btn-md data-target="#marcopolo" data-toggle="modal" type="button" Marco Polo Game
+			button.btn.btn-info.btn-md.ml-5 data-target="#active-record" data-toggle="modal" type="button" Active Record
+			button.btn.btn-info.btn-md.ml-5 data-target="#seven-segment" data-toggle="modal" type="button" Seven Segment
+	.row.mt-5
+		.col-md-6
+			-if File.exist?("#{Rails.root}/public/output_user_story_1.txt")
+				= link_to "Output", show_file_path, target: "_blank"
+
+
+#marcopolo.modal.fade
+	.modal-dialog
+		.modal-content
+			.modal-header
+				h4.modal-title Game Output
+				button.close data-dismiss="modal" type="button"  &times;
+			.modal-body
+				p =@marco.display_output
+			.modal-footer
+				button.btn.btn-default data-dismiss="modal" type="button"  Close
+
+#active-record.modal.fade
+	.modal-dialog
+		.modal-content
+			.modal-header
+				h4.modal-title Active Record
+				button.close data-dismiss="modal" type="button"  &times;
+			.modal-body
+				p As we know that rails uses MVC architecture where M stands for Models, V stands for Views, C stands for Controllers. Models are responsible to connect the application with the database (a layer which runs between the database and business logic). Active Record is the ORM in which tables are mapped to classes, objects are mapped to rows/records, and columns are mapped to attributes. Business logics are to be written in models to make light weight controllers.
+			.modal-footer
+				button.btn.btn-default data-dismiss="modal" type="button"  Close
+
+#seven-segment.modal.fade
+	.modal-dialog
+		.modal-content
+			.modal-header
+				h4.modal-title Upload Text File
+				button.close data-dismiss="modal" type="button"  &times;
+			=form_for "", url: upload_file_path , html: {multipart: true}, method: :post do |f|
+				.modal-body
+					.form-group
+						=f.label "Import File"
+						=f.file_field :gbd_file, class: "form-control", required: "", accept: 'text/plain'
+				.modal-footer
+					=f.submit "Upload", class: "button btn btn-default"
+					button.btn.btn-default data-dismiss="modal" type="button"  Close
