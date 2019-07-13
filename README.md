@@ -1,11 +1,15 @@
 # README
 
+# If you are not willing to setup the project in your local system then you can go to the following link given at the end of this file to run the application on the web. This application is hosted on heroku (initially it will take time because hosted on a free dyno).
+
+
 This file will tell you how to setup your system and run this test.
 
 List of Dependencies:
 
 `ruby 2.5.0
-rails 5.2.3`
+rails 5.2.3
+bundler 2.0.2`
 
 First install all the dependencies which a rails project have. Follow the setups below
 
@@ -33,7 +37,7 @@ ruby -v`
 
 Install bundler first
 
-`gem install bundler`
+`gem install bundler 2.0.2`
 
 `gem install rails -v 5.2.3`
 
@@ -69,3 +73,38 @@ A dialog box will appear.
 A dialog box will appear which accepts a txt file. Upload the seven segment file and the file is processed, output click will be shown on the screnn, click on the button you will see the file content
 # or
 If you want to check the file manually, please go to the public folder in the app root directory, output_user_story_1.txt contains the desired result.
+
+
+
+
+
+
+* Production link
+
+`https://nitish-so-ror-test.herokuapp.com/`
+
+
+To check the github repo open the following link
+
+`https://github.com/nitishkumargupta/nitish-so-ror-test`
+
+
+* To run application on rails console
+
+1) Go to the app directory
+2) execute `rails c`
+
+* For MarcoPoloGame run following 
+
+1) @marco = MarcoPoloGameOperation.new
+2) @marco.display_output
+
+* For User Story
+
+1) Save input file with any name in the public folder of the app directory.
+2) SevenSegmentOperation.read_file "file_name_used_in_first_step"
+3) Go to the public folder and check for the file named: "output_user_story_1.txt"
+
+
+
+# Thanks

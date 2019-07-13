@@ -30,4 +30,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /public/input_user_story_1.txt
-/public/outut_user_story_1.txt
+/public/output_user_story_1.txt

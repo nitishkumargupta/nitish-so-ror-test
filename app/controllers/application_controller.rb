@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
       return
     end
 		SevenSegmentOperation.read_file file_name
-    redirect_to root_url, :flash => { :notice => "File uploaded successfully. Please wait file is processing" }
+    redirect_to root_url, :flash => { :notice => "File uploaded successfully." }
   end
 
   def show_file;end
